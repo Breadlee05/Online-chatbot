@@ -1,0 +1,389 @@
+/* General Styles */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background-color: #f5f5f5;
+    line-height: 1.6;
+}
+header .logo{
+    display: flex;
+}
+
+/* Header */
+header {
+    position: relative; /* To position the image absolutely */
+    text-align: center;
+    margin-top: 20px;
+    overflow: hidden; /* Hide overflow content */
+    height: 1000px; /* Adjust as needed for default header height */
+    
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Overlay effect */
+    z-index: 1; /* Position overlay above the image */
+}
+
+header h1 {
+    position: relative;
+    align-items: center;
+    z-index: 1; /* Ensure text is above the overlay */
+    font-size: 5rem;
+    color: #ecf0f1;
+    margin: 0;
+}
+
+#headerImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('image.png');
+    background-size: cover; /* Ensures the image covers the entire banner area */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat;
+   
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header {
+        height: 300px; /* Reduce height on smaller screens */
+    }
+
+    header h1 {
+        font-size: 2rem; /* Smaller font size on smaller screens */
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        height: 250px; /* Further reduce height on mobile */
+    }
+
+    header h1 {
+        font-size: 1.5rem; /* Smaller font size on mobile */
+        padding: 10px;
+    }
+}
+
+
+/* Sections */
+section {
+    padding: 40px 20px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 800px;
+    background-color: #68d5f0;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+.events{
+    color: #121111;
+    background: #c075d7;
+    padding: 40px 20px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+.contact{
+    color: #121111;
+    background: #8fec87;
+    padding: 40px 20px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    font-size: 2rem;
+    color: #34495e;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 10px;
+    font-size: 1rem;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.3s ease;
+}
+li a{
+    text-decoration: none;
+}
+
+li:hover {
+    background-color: #f4f0e1;
+    color: #fff;
+}
+
+#contact p {
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+#contact a {
+    color: #2980b9;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+#contact a:hover {
+    color: #c0392b;
+}
+
+/* Chatbot Container */
+#chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 90%;
+    max-width: 300px;
+    background-color: #2c3e50;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+#chatbox {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+#chatlogs {
+    height: 150px;
+    overflow-y: auto;
+    padding: 10px;
+    background-color: #ecf0f1;
+    border-radius: 10px;
+    margin-bottom: 10px;
+
+}
+
+.bot-message {
+    background-color: #3498db;
+    color: #322e2e;
+    padding: 10px;
+    text-decoration: red;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-align: left;
+    animation: fadeIn 0.5s ease-in-out;
+    
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    outline: none;
+    background: paleturquoise;
+}
+
+#sendBtn {
+    padding: 10px;
+    background-color: #e67e22;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#sendBtn:hover {
+    background-color: #d35400;
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    section {
+        padding: 30px 15px;
+        width: 95%;
+    }
+
+    section h2 {
+        font-size: 1.8rem;
+    }
+
+    li {
+        font-size: 0.9rem;
+    }
+
+    #chatbot-container {
+        width: 80%;
+        bottom: 10px;
+        right: 10px;
+    }
+
+    input[type="text"],
+    #sendBtn {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    section {
+        padding: 20px 10px;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+    }
+
+    li {
+        font-size: 0.85rem;
+    }
+
+    .bot-message {
+        width: 95%;
+        bottom: 10px;
+        right: 10px;
+        color: #c0392b;
+    }
+}
+
+.user {
+    background-color: #f395e5;  /* Background color for user messages */
+    color: white;               /* Text color for user messages */
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-align: right;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+
+#chatbox .bot-message #chatlogs {
+    background-color: #000; /* Change this to your desired background color */
+    color: #fff; /* Change this to your desired text color */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* General message styling */
+.chat-box .message {
+    max-width: 70%;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    display: flex;
+}
+
+/* Styling for bot messages */
+.chat-box .hello {
+    background-color: #007bff; /* Blue background */
+    color: #fff; /* White text */
+}
+
+.chat-box .museum-name {
+    background-color: #4caf50; /* Green background */
+    color: #fff; /* White text */
+}
+
+.chat-box .ticket-booking {
+    background-color: #ff9800; /* Orange background */
+    color: #fff; /* White text */
+}
+
+.chat-box .ticket-number {
+    background-color: #9c27b0; /* Purple background */
+    color: #fff; /* White text */
+}
+
+.chat-box .name-prompt {
+    background-color: #3f51b5; /* Indigo background */
+    color: #fff; /* White text */
+}
+
+.chat-box .email-prompt {
+    background-color: #e91e63; /* Pink background */
+    color: #fff; /* White text */
+}
+
+.chat-box .payment-methods {
+    background-color: #00bcd4; /* Teal background */
+    color: #fff; /* White text */
+}
+
+.chat-box .success {
+    background-color: #8bc34a; /* Light green background */
+    color: #fff; /* White text */
+}
+
+.chat-box .thankyou {
+    background-color: #607d8b; /* Blue-gray background */
+    color: #fff; /* White text */
+}
